@@ -2,8 +2,8 @@
     $host = "localhost";
     $user = "root";
     $password = "";
-    $dbname = "livros";
+    $dbname = "books";
 
-    $conn = new pdo("mysql:host=$host;dbname=".$dbname, $user, $pass);
+    $conn = new pdo("mysql:host=$host;dbname=".$dbname, $user, $password);
 
 ?>
