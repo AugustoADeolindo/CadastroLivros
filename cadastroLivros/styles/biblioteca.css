@@ -1,0 +1,137 @@
+/* Estilo geral */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Ubuntu', Arial, sans-serif;
+    vertical-align: baseline;
+    list-style: none;
+    border: 0;
+}
+
+body {
+    scroll-behavior: smooth;
+    background: #f4f4f9;
+}
+
+header {
+    background-color: #151519;
+    color: white;
+    padding: 20px 0;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.logotipo-container img {
+    width: 150px;
+    height: auto;
+}
+
+.options-container a {
+    text-decoration: none;
+    color: white;
+    margin-left: 20px;
+    font-weight: bold;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.options-container a:hover {
+    color: #FCE185;
+}
+
+main {
+    margin-top: 30px;
+}
+
+.table-container {
+    width: 90%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #151519;
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead {
+    background-color: #1E1E32;
+    color: white;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    font-weight: bold;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+.book-cover {
+    width: 50px;
+    height: 75px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.button {
+    padding: 8px 12px;
+    background-color: #6F6F71;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-right: 10px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.button:hover {
+    background-color: #FCE185;
+    transform: scale(1.1);
+}
+
+footer {
+    background-color: #151519;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    table {
+        font-size: 14px;
+    }
+
+    .button {
+        font-size: 12px;
+    }
+}
