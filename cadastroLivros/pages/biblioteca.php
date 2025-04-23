@@ -23,11 +23,11 @@
     <header>
         <div class="header-container">
             <div class="logotipo-container">
-            <img class="logotipo" src="../assets/logotipo.png" class="logoTipo">
+                <img class="logotipo" src="../assets/logotipo.png" alt="Logotipo">
             </div>
             <nav class="options-container">
-                <a href="../scripts/save.php">Cadastrar Novo Livro</a>
-                <a href="../scripts/logout.php">Sair</a>
+                <a href="../index.html">Home</a>
+                <a href="../index.html#form">Cadastrar Livro</a>
             </nav>
         </div>
     </header>
@@ -36,47 +36,47 @@
         <section>
             <div class="table-container">
                 <h1>Lista de Livros</h1>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Capa</th>
-                            <th>Título</th>
-                            <th>Subtítulo</th>
-                            <th>Ano</th>
-                            <th>Editora</th>
-                            <th>Volume</th>
-                            <th>Etal</th>
-                            <th>Autor1</th>
-                            <th>Autor2</th>
-                            <th>Autor3</th>
-                            <th>Categoria</th>
-                            <th>Ações</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php foreach ($livros as $livro): ?>
+                <div class="table-responsive">
+                    <table>
+                        <thead>
                             <tr>
-                                <td><?= $livro['id'] ?></td>
-                                <td><img src="<?= $livro['capa'] ?>" alt="Capa do livro" class="book-cover"></td>
-                                <td><?= $livro['titulo'] ?></td>
-                                <td><?= $livro['subtitulo'] ?></td>
-                                <td><?= $livro['ano'] ?></td>
-                                <td><?= $livro['editora'] ?></td>
-                                <td><?= $livro['volume'] ?></td>
-                                <td><?= $livro['etal'] ?></td>
-                                <td><?= $livro['NomeAutor1'] . ' ' . $livro['SobreNomeAutor1'] ?></td>
-                                <td><?= $livro['NomeAutor2'] . ' ' . $livro['SobreNomeAutor2'] ?></td>
-                                <td><?= $livro['NomeAutor3'] . ' ' . $livro['SobreNomeAutor3'] ?></td>
-                                <td><?= $livro['categoria'] ?></td>
-                                <td>
-                                    <a href="../scripts/edit.php?id=<?= $livro['id'] ?>" class="button">Editar</a>
-                                    <a href="../scripts/delete.php?id=<?= $livro['id'] ?>" class="button">Deletar</a>
-                                </td>
+                                <th>ID</th>
+                                <th>Título</th>
+                                <th>Subtítulo</th>
+                                <th>Ano</th>
+                                <th>Editora</th>
+                                <th>Volume</th>
+                                <th>1° Autor</th>
+                                <th>2° Autor</th>
+                                <th>3° Autor</th>
+                                <th>Categoria</th>
+                                <th>Preço</th>
+                                <th></th>
                             </tr>
-                        <?php endforeach; ?>
-                    </tbody>
-                </table>
+                        </thead>
+                        <tbody>
+                            <?php foreach ($livros as $livro): ?>
+                                <tr id="linhas">
+                                    <td><?= htmlspecialchars($livro['id']) ?></td>
+                                    <td><?= htmlspecialchars($livro['titulo']) ?></td>
+                                    <td><?= htmlspecialchars($livro['subtitulo']) ?></td>
+                                    <td><?= htmlspecialchars($livro['ano']) ?></td>
+                                    <td><?= htmlspecialchars($livro['editora']) ?></td>
+                                    <td><?= htmlspecialchars($livro['volume']) ?></td>
+                                    <td><?= htmlspecialchars($livro['NomeAutor1'] . ' ' . $livro['SobreNomeAutor1']) ?></td>
+                                    <td><?= htmlspecialchars($livro['NomeAutor2'] . ' ' . $livro['SobreNomeAutor2']) ?></td>
+                                    <td><?= htmlspecialchars($livro['NomeAutor3'] . ' ' . $livro['SobreNomeAutor3']) ?></td>
+                                    <td><?= htmlspecialchars($livro['categoria']) ?></td>
+                                    <td>R$ <?= number_format($livro['valor'], 2, ',', '.') ?></td>
+                                    <td>
+                                        <a href="../scripts/edit.php?id=<?= $livro['id'] ?>" class="button">Editar</a>
+                                        <a href="../scripts/delete.php?id=<?= $livro['id'] ?>" class="button">Deletar</a>
+                                    </td>
+                                </tr>
+                            <?php endforeach; ?>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </section>
     </main>

@@ -5,5 +5,4 @@
     $dbname = "books";
 
     $conn = new pdo("mysql:host=$host;dbname=".$dbname, $user, $password);
-
 ?>

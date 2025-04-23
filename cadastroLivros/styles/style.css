@@ -1,15 +1,14 @@
-* {
+* { 
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     font-family: 'Ubuntu', Arial;
-    padding:0;
-    vertical-align:baseline;
-    list-style:none;
-    border:0
+    vertical-align: baseline;
+    list-style: none;
+    border: 0;
 }
 
-body{
+body {
     scroll-behavior: smooth;
 }
 
@@ -87,7 +86,7 @@ header {
 .content-infos h1 {
     min-width: 440px;
     font-size: 40px;
-    color: #F8F3E3;
+    color: #FCE185;
     margin-bottom: 20px;
 }
 
@@ -139,12 +138,11 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 70%;
+    height: 90%;
     background: linear-gradient(102.79deg, rgba(25, 25, 50, 0.5) 0%, rgba(41, 41, 56, 0.5) 100%);
     box-shadow: 0px 4px 193px 29px rgba(0, 0, 0, 0.25);
     border-radius: 27px;
 }
-
 
 form {
     display: flex;
@@ -245,17 +243,17 @@ form .top-form {
     transform: scale(1.1);
     color: #FCE185;
 }
+
 a:hover {
     transform: scale(1.1);
     color: #FCE185;
 }
 
-footer{
-    height: 60px;
-    box-sizing: border-box;
-    padding-left: 10%;
+footer {
     display: flex;
-    align-items: center;
-    background: #151519;
-    color: white;
+    justify-content: center;
+    background-color: black;
+    color: #f4f4f4;
+    text-align: center;
+    padding: 20px;
 }

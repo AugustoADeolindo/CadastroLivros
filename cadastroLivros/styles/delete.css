@@ -1,0 +1,97 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Ubuntu', Arial, sans-serif;
+    vertical-align: baseline;
+    list-style: none;
+    border: 0;
+}
+
+body {
+    scroll-behavior: smooth;
+    background: #2b2b2b;
+    color: #f4f4f4;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+h1 {
+    text-align: center;
+    color: #FCE185;
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+label {
+    font-size: 20px;
+    color: #f4f4f4;
+    background-color: rgba(41, 41, 56, 0.9);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    max-width: 600px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+}
+
+input[type="submit"] {
+    margin-top: 30px;
+    background-color: #FCE185;
+    color: #1c1c1c;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+input[type="submit"]:hover {
+    background-color: #ffdb58;
+    transform: scale(1.1);
+}
+
+a {
+    display: block;
+    text-align: center;
+    color: #FCE185;
+    font-size: 18px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: white;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 28px;
+    }
+
+    label {
+        font-size: 18px;
+        padding: 15px;
+    }
+
+    input[type="submit"] {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+
+    a {
+        font-size: 16px;
+    }
+}

@@ -96,20 +96,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <html>
 <head>
     <title>Editar Livro</title>
+    <link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../styles/edit.css">
 </head>
 <body>
     <h1>Editar Livro</h1>
-
     <form method="POST">
-        <label>Capa:</label><input type="text" name="capa" value="<?= $capa ?>"><br>
         <label>Título:</label><input type="text" name="titulo" value="<?= $titulo ?>"><br>
         <label>Subtítulo:</label><input type="text" name="subtitulo" value="<?= $subtitulo ?>"><br>
         <label>Ano:</label><input type="number" name="ano" value="<?= $ano ?>"><br>
         <label>Editora:</label><input type="text" name="editora" value="<?= $editora ?>"><br>
         <label>Volume:</label><input type="text" name="volume" value="<?= $volume ?>"><br>
         <label>ISBN:</label><input type="text" name="isbn" value="<?= $isbn ?>"><br>
-        <label>Valor:</label><input type="text" name="valor" value="<?= $valor ?>"><br>
-        <label>Etal:</label><input type="text" name="etal" value="<?= $etal ?>"><br>
+        <label>Preço:</label><input type="text" name="valor" value="<?= $valor ?>"><br>
         <label>Nome Autor 1:</label><input type="text" name="NomeAutor1" value="<?= $NomeAutor1 ?>"><br>
         <label>Sobrenome Autor 1:</label><input type="text" name="SobreNomeAutor1" value="<?= $SobreNomeAutor1 ?>"><br>
         <label>Nome Autor 2:</label><input type="text" name="NomeAutor2" value="<?= $NomeAutor2 ?>"><br>
@@ -118,9 +117,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <label>Sobrenome Autor 3:</label><input type="text" name="SobreNomeAutor3" value="<?= $SobreNomeAutor3 ?>"><br>
         <label>Categoria:</label><input type="text" name="categoria" value="<?= $categoria ?>"><br><br>
 
-        <input type="submit" value="Salvar">
-    </form><br>
+        
+        <div id="area-botoes">
+            <a href="../pages/biblioteca.php" id="voltar">Voltar</a>
+            <input type="submit" value="Salvar">
+        </div>
 
-    <a href="biblioteca.php">Voltar</a>
+    </form><br>
 </body>
 </html>
