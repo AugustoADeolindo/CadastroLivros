@@ -65,7 +65,7 @@ require_once('conexao.php');
                 echo '<div class="error">❌ Erro ao cadastrar o livro.</div>';
             }
 
-            echo '<a href="../pages/biblioteca.php">Voltar para a biblioteca</a>';
+            echo '<a href="../pages/biblioteca.php">Ver biblioteca</a>';
         }
         ?>
     </div>
