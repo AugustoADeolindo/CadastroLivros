@@ -11,7 +11,6 @@ SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
 
-
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
@@ -48,18 +47,20 @@ CREATE TABLE `livros` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Extraindo dados da tabela `livros`
+-- Dados reais de livros
 --
 
 INSERT INTO `livros` (`id`, `capa`, `titulo`, `subtitulo`, `ano`, `editora`, `volume`, `isbn`, `valor`, `etal`, `NomeAutor1`, `SobreNomeAutor1`, `NomeAutor2`, `SobreNomeAutor2`, `NomeAutor3`, `SobreNomeAutor3`, `categoria`) VALUES
-(1, 'capa', 'It', 'a coisa', 1986, 'Saraiva', 1, 9780670813025, 59.9, 1, 'Stephen', 'King', 'Murilo', 'Garcia', 'Thailon', 'da Silva', 'Terror'),
-(2, 'capa', 'It', 'a coisa', 1986, 'Saraiva', 1, 9780670813025, 59.9, 1, 'Stephen', 'King', 'Murilo', 'Garcia', 'Thailon', 'da Silva', 'Terror'),
-(3, 'capa', 'It', 'a coisa', 1986, 'Saraiva', 1, 9780670813025, 59.9, 1, 'Stephen', 'King', 'Murilo', 'Garcia', 'Thailon', 'da Silva', 'Terror'),
-(4, 'capa', 'It', 'a coisa', 1986, 'Saraiva', 1, 9780670813025, 59.9, 1, 'Stephen', 'King', 'Murilo', 'Garcia', 'Thailon', 'da Silva', 'Terror');
-
---
--- Índices para tabelas despejadas
---
+(1, 'capa1.jpg', '1984', 'A distopia clássica', 1949, 'Companhia das Letras', 1, 9788535914849, 42.9, 0, 'George', 'Orwell', NULL, NULL, NULL, NULL, 'Ficção'),
+(2, 'capa2.jpg', 'Dom Casmurro', 'Obra-prima de Machado', 1899, 'Editora Ática', 1, 9788508151882, 29.9, 0, 'Machado', 'de Assis', NULL, NULL, NULL, NULL, 'Romance'),
+(3, 'capa3.jpg', 'O Senhor dos Anéis', 'A Sociedade do Anel', 1954, 'Martins Fontes', 1, 9788533613379, 89.9, 1, 'J.R.R.', 'Tolkien', NULL, NULL, NULL, NULL, 'Fantasia'),
+(4, 'capa4.jpg', 'Harry Potter e a Pedra Filosofal', NULL, 1997, 'Rocco', 1, 9788532530783, 39.9, 0, 'J.K.', 'Rowling', NULL, NULL, NULL, NULL, 'Fantasia'),
+(5, 'capa5.jpg', 'O Código Da Vinci', NULL, 2003, 'Sextante', 1, 9788575421138, 45.0, 0, 'Dan', 'Brown', NULL, NULL, NULL, NULL, 'Suspense'),
+(6, 'capa6.jpg', 'O Pequeno Príncipe', NULL, 1943, 'Agir', 1, 9788522005230, 29.9, 0, 'Antoine', 'de Saint-Exupéry', NULL, NULL, NULL, NULL, 'Infantil'),
+(7, 'capa7.jpg', 'A Revolução dos Bichos', NULL, 1945, 'Companhia das Letras', 1, 9788535910193, 36.0, 0, 'George', 'Orwell', NULL, NULL, NULL, NULL, 'Fábula'),
+(8, 'capa8.jpg', 'Orgulho e Preconceito', NULL, 1813, 'Martin Claret', 1, 9788572328492, 32.0, 0, 'Jane', 'Austen', NULL, NULL, NULL, NULL, 'Romance'),
+(9, 'capa9.jpg', 'A Menina que Roubava Livros', NULL, 2005, 'Intrínseca', 1, 9788578070548, 49.9, 0, 'Markus', 'Zusak', NULL, NULL, NULL, NULL, 'Drama'),
+(10, 'capa10.jpg', 'O Hobbit', NULL, 1937, 'Martins Fontes', 1, 9788533603141, 44.9, 0, 'J.R.R.', 'Tolkien', NULL, NULL, NULL, NULL, 'Fantasia');
 
 --
 -- Índices para tabela `livros`
@@ -68,14 +69,10 @@ ALTER TABLE `livros`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT de tabelas despejadas
---
-
---
 -- AUTO_INCREMENT de tabela `livros`
 --
 ALTER TABLE `livros`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
