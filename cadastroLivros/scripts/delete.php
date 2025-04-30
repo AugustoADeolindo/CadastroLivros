@@ -10,27 +10,31 @@ if (!$id) {
 }
 
 // Buscar o livro pelo ID
-$sql = "SELECT * FROM livros WHERE id = :id";
-$stmt = $conn->prepare($sql);
-$stmt->bindParam(':id', $id);
-$stmt->execute();
-$livro = $stmt->fetch(PDO::FETCH_ASSOC);
-
-// Verifica se o livro foi encontrado
-if (!$livro) {
-    echo "Livro não encontrado.";
-    exit;
-}
-
-// Deletar o livro se o formulário for enviado
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $sql = "DELETE FROM livros WHERE id = :id";
-    $stmt = $conn->prepare($sql);
+try{
+    $sql = "SELECT * FROM livros WHERE id = :id";
+    $stmt = $pdo->prepare($sql);
     $stmt->bindParam(':id', $id);
     $stmt->execute();
+    $livro = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    header("Location: ../pages/biblioteca.php");
-    exit;
+    // Verifica se o livro foi encontrado
+    if (!$livro) {
+        echo "Livro não encontrado.";
+        exit;
+    }
+
+    // Deletar o livro se o formulário for enviado
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $sql = "DELETE FROM livros WHERE id = :id";
+        $stmt = $pdo->prepare($sql);
+        $stmt->bindParam(':id', $id);
+        $stmt->execute();
+
+        header("Location: ../pages/biblioteca.php");
+        exit;
+    }
+} catch (PDOException $e) {
+    echo "Erro ao conectar ao banco de dados: " . $e->getMessage();
 }
 ?>
 

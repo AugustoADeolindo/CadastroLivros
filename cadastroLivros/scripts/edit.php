@@ -4,10 +4,14 @@ require_once('../scripts/conexao.php');
 $id = $_GET['id'] ?? null;
 
 // Buscar o livro pelo ID
-$stmt = $conn->prepare("SELECT * FROM livros WHERE id = :id");
-$stmt->bindParam(':id', $id);
-$stmt->execute();
-$livro = $stmt->fetch(PDO::FETCH_ASSOC);
+try{
+    $stmt = $pdo->prepare("SELECT * FROM livros WHERE id = :id");
+    $stmt->bindParam(':id', $id);
+    $stmt->execute();
+    $livro = $stmt->fetch(PDO::FETCH_ASSOC);
+} catch (PDOException $e) { 
+    echo "Erro ao conectar ao banco de dados: " . $e->getMessage();
+}
 
 $id = $livro['id'];
 $capa = $livro['capa'];
@@ -65,7 +69,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         categoria = :categoria
         WHERE id = :id";
 
-    $stmt = $conn->prepare($sql);
+    $stmt = $pdo->prepare($sql);
 
     $stmt->bindParam(':id', $id);
     $stmt->bindParam(':capa', $capa);

@@ -2,12 +2,15 @@
     // Conexão com o Banco de Dados
     require_once('../scripts/conexao.php');
 
-    // Preparar a query
+try{
     $sql = "SELECT id, capa, titulo, subtitulo, ano, editora, volume, isbn, valor, etal, NomeAutor1, SobreNomeAutor1, NomeAutor2, SobreNomeAutor2, NomeAutor3, SobreNomeAutor3, categoria FROM livros";
-    $stmt = $conn->query($sql);
+    $stmt = $pdo->query($sql);
 
-    // Buscar todos os livros
     $livros = $stmt->fetchAll(PDO::FETCH_ASSOC);
+} catch (PDOException $e) { 
+    echo "Erro ao conectar ao banco de dados: " . $e->getMessage();
+}
+
 ?>
 
 <!DOCTYPE html>
