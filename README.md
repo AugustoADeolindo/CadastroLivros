@@ -46,6 +46,4 @@ Um sistema web simples feito em PHP e MySQL para gerenciar livros de uma bibliot
 
 -Compatível com mobile e desktop
 
-📄 Licença
 
-Este projeto está sob a licença MIT.
